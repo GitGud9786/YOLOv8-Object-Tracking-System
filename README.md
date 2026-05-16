@@ -64,7 +64,7 @@ Introduces diversity to prevent the model from memorising patterns:
 - Brightness and contrast jitter
 - HSV hue/saturation/value tweaking
 
-### SAHI-style Tiling
+### Image Tiling to preserve object details
 Addresses the core challenge of small objects being destroyed by downscaling:
 - Full images are sliced into overlapping 640×640 tiles
 - Each tile is passed to YOLO at full resolution
@@ -109,3 +109,5 @@ Inference run on 1,610 test images after 50 epochs:
 The model performs reasonably well given only 50 epochs of fine-tuning.
 It successfully detects humans even under low lighting conditions as seen
 in the output images.
+Main challenges were regarding augmenting the dataset which continuously increased space usage in Kaggle’s given space. 
+This prevented implementation to handle class imbalance which is a probably a significant reason for the model to not necessarily show satisfactory metrics.
